@@ -27,9 +27,7 @@ input {
   border-radius: 2px;
 }
 
-.hidden {
-  display: none;
-}
+
 /* IDEABOX RULES (SIDEBAR) */
 
 .idea-box {
@@ -40,6 +38,17 @@ input {
   grid-area: idea-box;
   border-right: 1px solid #FFFFFF;
 }
+
+.hamburger-menu, .hamburger-menu-close {
+  background-color:#1F1F3D;
+  border: none;
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
 
 .filter-starred {
   color: #BFBFDD;
@@ -205,5 +214,18 @@ button.comment-color{
 
   .filter-starred {
     display: none;
+  }
+
+  .hamburger-menu {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    left: 10px;
+  }
+
+  .hamburger-menu-close {
+    position: absolute;
+    top: 18px;
+    left: 10px;
   }
 }
