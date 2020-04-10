@@ -225,9 +225,9 @@ button.comment-color{
    grid-template-columns: repeat(1, 1fr);
   }
 
-  /* .filter-starred {
+  .filter-starred {
     display: none;
-  } */
+  }
 
   .hamburger-menu {
     display: inline-block;

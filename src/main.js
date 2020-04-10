@@ -3,31 +3,18 @@ var hamburgerMenu = document.querySelector(".hamburger-menu");
 var hamburgerMenuClose = document.querySelector(".hamburger-menu-close");
 var filterStarred = document.querySelector(".filter-starred");
 var modal = document.querySelector(".modal");
-var image = hamburgerMenu.querySelector('img');
+var hamburgerImage = hamburgerMenu.querySelector('img');
 
 //event listeners
 hamburgerMenu.addEventListener('click', showFilterStarred);
-window.addEventListener('resize', handleWindowResize);
-//hamburgerMenuClose.addEventListener('click', toggleFilterStarred);
+
 //functions
-
 function showFilterStarred() {
-  //hide hamburgerMenu
-  // AND show hamburgerMenuClose
-  // ANd show filterStarred
-
-  image.src = "images/menu-close.svg";
-  filterStarred.style.display = "block";
-  modal.hidden = false;
-
-}
-
-function handleWindowResize() {
-  if (window.innerWidth > 475) {
-      modal.hidden = true;
-      image.src = "images/menu.svg";
-      filterStarred.style.display = "none";
-  } else {
-      filterStarred.style.display = "block";
-  }
+  // var menuButton = hamburgerImage.src;
+  // if (menuButton === "images/menu.svg") {
+  //   console.log('test!');
+  // }
+  hamburgerImage.src = (hamburgerImage.src.match("images/menu-close.svg")) ? "images/menu.svg" : "images/menu-close.svg";
+  filterStarred.style.display = (filterStarred.style.display === "block") ? "none" : "block";
+  modal.hidden = (modal.hidden === false) ? true : false;
 }
