@@ -1,42 +1,65 @@
-# Ideabox Group Project
+# Ideabox Group Project - Application for the thoughtful user
 
-Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application a new client that records and archives our ideas (good and bad alike).
+## Pair project by Liliana Weimer, Alex Sodemann, and Jenna DiLullo during Module 1 at Turing School of Software and Design
 
-Throughout the project, one of our focuses will be on providing a fluid and responsive client-side interface. To this end, we'll rely on JavaScript and to implement snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions.  Our goal is to also incorporate an agile workflow by incorporating two weekly sprints.
+## GitHub Profiles
+- Liliana Weimer: https://github.com/lilianaweimer
+- Alex Sodemann: https://github.com/asodemann18
+- Jenna DiLullo: https://github.com/jennadilullo8
 
-*Note*: Expectations listed for Iteration 0-1 should be complete by your first check-in. No JavaScript should be written before that check-in, unless you get approval to move ahead with functionality from your Project Manager.
+## About project:
+In this project, the user will be able to record and archive their ideas. The ideas will then be written as idea title cards and the user will then be able to save them and later reference them by clicking the show starred ideas button. This application is also mobile friendly to satisfy the user on the go.
 
-## Learning Goals
+## Setup:
 
-* Continue to improve on building responsive client-side applications with good user feedback
-* Understand how to implement client-side data persistence using `localStorage`
+- One team member will fork the repo: [the boilerplate
+  repository](https://github.com/turingschool-examples/ideabox-boilerplate)
+- That team member will then clone and copy the link into their terminal, as well as invite the other team members as collaborators.
+- One of the team members will now go to work by using the proper GitFlow.
+
+## Project Goals:
+
+- Build an application from scratch using HTML, CSS, and JavaScript
+- Properly communicate GitFlow with collaborators
+- Use Media Queries to respond to mobile layout
+- Build responsive client-side applications with good user feedback
+
+* Implement client-side data persistence using `localStorage`
 * Understand what it looks like to have a separate data model (using a class) and DOM model
 * Utilize `data-*` attributes
-* Incorporate & iterate over arrays in order to filter what is being displayed
-* Craft code with clean style, using small functions that show trends toward DRYness and SRP
+* Implement & iterate over arrays in order to filter what is being displayed
 
-## Setup
+- Refactor code to show only DRY and SRP code
 
-- Complete a DTR
-- Create a slack channel for all team members and your Project Manager.
-- Fork [the boilerplate
-  repository](https://github.com/turingschool-examples/ideabox-boilerplate). Add all team members and your Project Manager as collaborators.
-- Deploy your application to GitHub Pages.
-- In the team channel, drop the repo link and GitHub pages link.
+#### Wins:
 
-## Progression
+- Developed a desktop layout identical to the comp layout
+- Creating a mobile layout that responds extremely well with resizing
 
-### Iteration 0 - Desktop Layout
+#### Challenges:
 
-Plan then write the HTML and CSS so that your application matches this comp. Based on what you are building, you can anticipate that the Idea "cards" will not always be there on page load, but for now, they should.
+- Removing and adding items as the window decreases and increases to the users liking
 
-Use the same text on your cards that is used in the spec so you can ensure your spacing/sizing is accurate.
+#### Reflections:
 
-![Desktop Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/colors.jpg)
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/icons.jpg)
+-
 
-You will need the `svg` files for the star, delete, and menu icons. [Here's the link to download the `svg` icons.](https://drive.google.com/drive/folders/18xpWplI0tpXIK1omBZeq04LEx2OMzzMK?usp=sharing)
+#### Technologies Used:
+
+- HTML
+- CSS
+- JavaScript
+
+## In Action:
+
+### Desktop Layout:
+
+- Comparison between the comp desktop layout and ours
+
+![Desktop Layout Comp](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
+
+![Our Desktop Layout]()
+
 
 ### Iteration 1 - Mobile Layout
 
