@@ -1,9 +1,4 @@
 
-// As a user,
-// - When I click “Save”,
-// - And a new card is successfully created,
-// - I should NOT see the page reload
-
 //querySelector
 var hamburgerMenu = document.querySelector(".hamburger-menu");
 var hamburgerMenuClose = document.querySelector(".hamburger-menu-close");
