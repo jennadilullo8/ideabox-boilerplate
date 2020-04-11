@@ -140,6 +140,10 @@ button.save {
   padding: 5px 10px;
 }
 
+button:disabled {
+  background-color: #5D5C85;
+
+}
 /* IDEACARD RULES */
 
 .idea-cards-section {

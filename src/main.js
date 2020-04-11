@@ -1,5 +1,5 @@
-//querySelector
 
+//querySelector
 var hamburgerMenu = document.querySelector(".hamburger-menu");
 var hamburgerMenuClose = document.querySelector(".hamburger-menu-close");
 var filterStarred = document.querySelector(".filter-starred");
@@ -14,7 +14,8 @@ var ideaArray = [];
 //event listeners
 hamburgerMenu.addEventListener('click', showFilterStarred);
 saveButton.addEventListener('click', addNewIdea);
-
+titleInput.addEventListener('keyup', enableSaveButton);
+bodyInput.addEventListener('keyup', enableSaveButton);
 //event handlers
 function showFilterStarred() {
   hamburgerImage.src = (hamburgerImage.src.match("images/menu-close.svg")) ? "images/menu.svg" : "images/menu-close.svg";
@@ -32,6 +33,14 @@ function addNewIdea() {
   }
   clearInput();
   showNewIdea();
+}
+
+function enableSaveButton() {
+  var titleInputValue = titleInput.value;
+  var bodyInputValue = bodyInput.value;
+  if (titleInputValue !== "" && bodyInputValue !== "") {
+    saveButton.disabled = false;
+  }
 }
 
 function showNewIdea() {
