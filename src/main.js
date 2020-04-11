@@ -12,7 +12,7 @@ var hamburgerImage = hamburgerMenu.querySelector('img');
 var saveButton = document.querySelector('.save');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
-
+var ideaCardsSection = document.querySelector('.idea-cards-section');
 
 var ideaArray = [];
 //event listeners
@@ -32,6 +32,31 @@ function addNewIdea() {
 
   if (titleInputValue !== "" && bodyInputValue !== "") {
     ideaArray.push(newIdea);
-    
   }
+
+  showNewIdea();
 }
+function showNewIdea() {
+    ideaCardsSection.innerText = "";
+      for (var i = 0; i < ideaArray.length; i++) {
+        var newIdeaHTML = `
+          <article class="idea-cards-article" data-id=${ideaArray[i].id}>
+            <article class="star-x-button">
+              <button class="star-x-button"><img src="images/star-active.svg" alt="star-active" width="25px" height="25px"> </button>
+              <button class="star-x-button"><img src="images/delete.svg" alt="image-deleted" width="25px" height="25px"> </button>
+            </article>
+            <article class="idea-cards-text">
+              <h3>${ideaArray[i].title}</h3>
+              <p>${ideaArray[i].body}</p>
+            </article>
+            <article class="comment-button">
+              <button class="comment-color"><img src="images/comment.svg" alt="comment" width="25px" height="25px"></button>
+              <p id="comment-text">Comment</p>
+            </article>
+          </article>`
+
+          ideaCardsSection.insertAdjacentHTML('afterbegin', newIdeaHTML);
+      }
+}
+//check ids before displaying before displaying
+//!savedPosters.includes(currentPoster)
