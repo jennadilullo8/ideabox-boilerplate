@@ -1,8 +1,4 @@
 //querySelector
-// As a user,
-// - When I click “Save”,
-// - If I entered information in both the “Title” and “Body” input fields,
-// - I should see a new idea card with the provided title and body appear in the idea list
 
 var hamburgerMenu = document.querySelector(".hamburger-menu");
 var hamburgerMenuClose = document.querySelector(".hamburger-menu-close");
@@ -18,7 +14,8 @@ var ideaArray = [];
 //event listeners
 hamburgerMenu.addEventListener('click', showFilterStarred);
 saveButton.addEventListener('click', addNewIdea);
-//functions
+
+//event handlers
 function showFilterStarred() {
   hamburgerImage.src = (hamburgerImage.src.match("images/menu-close.svg")) ? "images/menu.svg" : "images/menu-close.svg";
   filterStarred.style.display = (filterStarred.style.display === "block") ? "none" : "block";
@@ -33,9 +30,10 @@ function addNewIdea() {
   if (titleInputValue !== "" && bodyInputValue !== "") {
     ideaArray.push(newIdea);
   }
-
+  clearInput();
   showNewIdea();
 }
+
 function showNewIdea() {
     ideaCardsSection.innerText = "";
       for (var i = 0; i < ideaArray.length; i++) {
@@ -58,5 +56,8 @@ function showNewIdea() {
           ideaCardsSection.insertAdjacentHTML('afterbegin', newIdeaHTML);
       }
 }
-//check ids before displaying before displaying
-//!savedPosters.includes(currentPoster)
+
+function clearInput() {
+  titleInput.value = "";
+  bodyInput.value = "";
+}
