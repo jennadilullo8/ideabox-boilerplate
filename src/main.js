@@ -9,6 +9,9 @@ var saveButton = document.querySelector('.save');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 var ideaCardsSection = document.querySelector('.idea-cards-section');
+var ideaCardsArticle = document.getElementsByClassName('idea-cards-article');
+var starButton = document.querySelector('.star-button');
+var deleteButton = document.querySelector('.x-button');
 
 //array
 var ideaArray = [];
@@ -18,6 +21,9 @@ hamburgerMenu.addEventListener('click', showFilterStarred);
 saveButton.addEventListener('click', addNewIdea);
 titleInput.addEventListener('keyup', enableSaveButton);
 bodyInput.addEventListener('keyup', enableSaveButton);
+ideaCardsSection.addEventListener('click', function() {
+  deleteIdea(event);
+});
 
 //event handlers
 function showFilterStarred() {
@@ -48,9 +54,9 @@ function showNewIdea() {
       for (var i = 0; i < ideaArray.length; i++) {
         var newIdeaHTML = `
           <article class="idea-cards-article" data-id=${ideaArray[i].id}>
-            <article class="star-x-button">
-              <button class="star-x-button"><img src="images/star-active.svg" alt="star-active" width="25px" height="25px"> </button>
-              <button class="star-x-button"><img src="images/delete.svg" alt="image-deleted" width="25px" height="25px"> </button>
+            <article class="star-button">
+              <button class="star-button"><img src="images/star-active.svg" alt="star-active" width="25px" height="25px"> </button>
+              <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}> </button>
             </article>
             <article class="idea-cards-text">
               <h3>${ideaArray[i].title}</h3>
@@ -69,4 +75,17 @@ function showNewIdea() {
 function clearInput() {
   titleInput.value = "";
   bodyInput.value = "";
+}
+
+function deleteIdea(event) {
+  var uniqueID = event.target.dataset.id;
+  console.log(event.target);
+  if (event.target.classList.contains('x-button')) {
+    var deletedIdea = document.querySelector(`.idea-cards-article[data-id="${uniqueID}"]`);
+    for (var i = 0; i < ideaArray.length; i++) {
+      if (ideaArray[i].id == deletedIdea.dataset.id) {
+        ideaArray.splice(ideaArray[i], 1);
+      }
+    }
+  }
 }
