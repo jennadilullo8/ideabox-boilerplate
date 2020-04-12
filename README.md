@@ -23,24 +23,27 @@ In this project, the user will be able to record and archive their ideas. The id
 - Properly communicate GitFlow with collaborators
 - Use Media Queries to respond to mobile layout
 - Build responsive client-side applications with good user feedback
+- Use a separate data model, such as a class, and a DOM model
+- Create arrays to filter what is displayed
+- Refactor code to show only DRY and SRP code
+
 
 * Implement client-side data persistence using `localStorage`
-* Understand what it looks like to have a separate data model (using a class) and DOM model
 * Utilize `data-*` attributes
-* Implement & iterate over arrays in order to filter what is being displayed
 
-- Refactor code to show only DRY and SRP code
 
 #### Wins:
 
 - Developed a desktop layout identical to the comp layout
 - Creating a mobile layout that responds extremely well with resizing
 - Understanding the process of hiding elements and having other elements reappear with one click
+- Understand and implement code to complete an iteration in a short amount of time
 
 #### Challenges:
 
 - Removing and adding items as the window decreases and increases to the users liking
 - Using proper syntax to accomplish our goals
+- Writing dryer code
 
 #### Reflections:
 
@@ -56,75 +59,33 @@ In this project, the user will be able to record and archive their ideas. The id
 
 ### Desktop Layout:
 
-Comparison between the comp desktop layout and ours:
+- Comparison between the comp desktop layout and ours:
+
+### Desktop Layout Comp:
 
 ![Desktop Layout Comp](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
+
+### Our Desktop Layout:
 
 ![Our Desktop Layout](/images/Desktop-layout.png)
 
 
 ### Iteration 1 - Mobile Layout
 
-Giphy of full mobile layout with and without navigation bar - STILL NEEDS TO BE IMPLEMENTED:
+- Giphy of full mobile layout with and without navigation bar:
 
-![Mobile Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile.jpg)
+![Mobile Layout with Dropdown](http://g.recordit.co/3OmCWqEGD7.gif)
 
-Full mobile layout with open navigation:
 
-![Mobile Layout with Dropdown](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile-dropdown.jpg)
+### Iteration 2 - Adding Ideas
 
-### Iteration 2
+Giphy will show:
 
-*Architecture*
+- When either input field is empty, the "Save" button will be a lighter color
+- New idea cards will be added to idea list once both input fields are filled out and the "Save" button is clicked.  
+- Once an idea card is created, the input fields should clear out.
 
-For this project, we’ll be increasingly thinking about the “data model” and “DOM model” as separate entities. We’ll be using:
-
-* JSON and `localStorage` to persist data on page reload.
-* vanilla JavaScript to manage client-side interactions.
-
-Your entire application will consist of one HTML page or template. You will have two JavaScript files, for now:
-
-1. An `idea.js` file that contains an `Idea` class.
-  * `Idea` methods must include, but are not limited to:
-    1. `constructor`
-    2. `saveToStorage` (should only have one job which is to save the instance to storage)
-    3. `deleteFromStorage`
-    4. `updateIdea` (should be able to update the idea’s title, body, or starred state)
-2. A `main.js` file that contains all DOM related JavaScript.
-
-*NOTE:*The idea.js file  must be the first script in your HTML so that your main.js file has access to your Idea class.
-
-*Data Model*
-
-*  An idea has an /id/, /title/, /body,/and /star/.
-* The /id/ should be a unique identifier. (Note: generating a random number does NOT guarantee it will be unique)
-* /title/ and /body/ are strings
-/star/ is a boolean
-
-Each idea should be created as an object instance of the Idea class. Once an idea object is created, all that data can be used to update the DOM. That object should also be added to a list of all the ideas your application currently has. This should probably be a global variable in your main.js.
-
-*Iteration 2 - Adding Ideas*
-
-As a user,
-- When I click “Save”,
-- If I entered information in both the “Title” and “Body” input fields,
-- I should see a new idea card with the provided title and body appear in the idea list
-
-As a user,
-- When I click “Save”,
-- If I entered information in both the “Title” and “Body” input fields,
-- I should see the “Title” and “Body” input fields clear out
-
-As a user,
-- When I look at the “Save” button,
-- When either the “Title” or “Body” inputs are empty,
-- I should notice that the “Save” button is disabled because it is a lighter color and the cursor is not a pointer when I hover over it
-
-As a user,
-- When I click “Save”,
-- And a new card is successfully created,
-- I should NOT see the page reload
-
+![New Idea Cards and Inputs Are Cleared out](http://g.recordit.co/9ievjfU2h2.gif)
 
 ## Rubric
 
