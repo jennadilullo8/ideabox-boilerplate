@@ -22,6 +22,7 @@ saveButton.addEventListener('click', addNewIdea);
 titleInput.addEventListener('keyup', enableSaveButton);
 bodyInput.addEventListener('keyup', enableSaveButton);
 ideaCardsSection.addEventListener('click', function() {
+  deleteIdeaDOM(event);
   deleteIdea(event);
 });
 
@@ -68,7 +69,7 @@ function showNewIdea() {
             </article>
           </article>`
 
-          ideaCardsSection.insertAdjacentHTML('afterbegin', newIdeaHTML);
+          ideaCardsSection.insertAdjacentHTML('beforeend', newIdeaHTML);
       }
 }
 
@@ -77,15 +78,16 @@ function clearInput() {
   bodyInput.value = "";
 }
 
+function deleteIdeaDOM(event) {
+  event.target.closest('.idea-cards-article').remove();
+}
+
 function deleteIdea(event) {
-  var uniqueID = event.target.dataset.id;
-  console.log(event.target);
-  if (event.target.classList.contains('x-button')) {
-    var deletedIdea = document.querySelector(`.idea-cards-article[data-id="${uniqueID}"]`);
-    for (var i = 0; i < ideaArray.length; i++) {
-      if (ideaArray[i].id == deletedIdea.dataset.id) {
-        ideaArray.splice(ideaArray[i], 1);
-      }
+  var uniqueID = event.target.closest('.idea-cards-article').dataset.id;
+
+  for (var i = 0; i < ideaArray.length; i++) {
+    if (uniqueID == ideaArray[i].id) {
+      ideaArray.splice(ideaArray.indexOf(ideaArray[i]), 1);
     }
   }
 }
