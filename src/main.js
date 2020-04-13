@@ -10,8 +10,7 @@ var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 var ideaCardsSection = document.querySelector('.idea-cards-section');
 var ideaCardsArticle = document.getElementsByClassName('idea-cards-article');
-var starButton = document.querySelector('.star-button');
-var deleteButton = document.querySelector('.x-button');
+
 
 //array
 var ideaArray = [];
@@ -23,7 +22,7 @@ titleInput.addEventListener('keyup', enableSaveButton);
 bodyInput.addEventListener('keyup', enableSaveButton);
 ideaCardsSection.addEventListener('click', function() {
   deleteIdeaDOM(event);
-  deleteIdea(event);
+  //deleteIdea(event);
 });
 
 //event handlers
@@ -79,11 +78,14 @@ function clearInput() {
 }
 
 function deleteIdeaDOM(event) {
+  if (event.target.className === ('x-button')) {
   event.target.closest('.idea-cards-article').remove();
+  }
+  deleteIdea(event);
 }
 
 function deleteIdea(event) {
-  var uniqueID = event.target.closest('.idea-cards-article').dataset.id;
+  var uniqueID = event.target.closest('.x-button').dataset.id;
 
   for (var i = 0; i < ideaArray.length; i++) {
     if (uniqueID == ideaArray[i].id) {
