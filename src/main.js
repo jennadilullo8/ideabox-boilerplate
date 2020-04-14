@@ -46,11 +46,17 @@ function enableSaveButton() {
 
 function showNewIdea() {
   ideaCardsSection.innerText = "";
+  var starStyle;
   for (var i = 0; i < ideaArray.length; i++) {
+     if (ideaArray[i].star === true) {
+       starStyle = "images/star-active.svg"
+    } else {
+      starStyle = "images/star.svg"
+    }
     var newIdeaHTML = `
       <article class="idea-cards-article" data-id=${ideaArray[i].id}>
         <article class="star-x-button">
-          <button class="star-button"><img src="images/star.svg" class="star-button" alt="star-empty" width="25px" height="25px"> </button>
+          <button class="star-button"><img src="${starStyle}" class="star-button" alt="star-empty" width="25px" height="25px"> </button>
           <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}></button>
         </article>
         <article class="idea-cards-text">
