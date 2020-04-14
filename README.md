@@ -1,6 +1,6 @@
 # Ideabox Group Project - Application for the thoughtful user
 
-## Pair project by Liliana Weimer, Alex Sodemann, and Jenna DiLullo during Module 1 at Turing School of Software and Design
+## Group project by Liliana Weimer, Alex Sodemann, and Jenna DiLullo during Module 1 at the Turing School of Software and Design
 
 ## GitHub Profiles
 - Liliana Weimer: https://github.com/lilianaweimer
@@ -8,14 +8,7 @@
 - Jenna DiLullo: https://github.com/jennadilullo8
 
 ## About project:
-In this project, the user will be able to record and archive their ideas. The ideas will then be written as idea title cards and the user will then be able to save them and later reference them by clicking the show starred ideas button. This application is also mobile friendly to satisfy the user on the go.
-
-## Setup:
-
-- One team member will fork the repo: [the boilerplate
-  repository](https://github.com/turingschool-examples/ideabox-boilerplate)
-- That team member will then clone and copy the link into their terminal, as well as invite the other team members as collaborators
-- One of the team members will now go to work by using the proper GitFlow
+In this project, we created an application with which a user will be able to record and archive their ideas. The user will write their ideas in the provided Title and Idea inputs, and save them for later reference. They can also "star" an idea, and use the Filter Starred Ideas button to filter their starred ideas. This application is also mobile-friendly to satisfy the user on the go.
 
 ## Project Goals:
 
@@ -33,15 +26,15 @@ In this project, the user will be able to record and archive their ideas. The id
 
 #### Wins:
 
-- Developed a desktop layout identical to the comp layout
-- Creating a mobile layout that responds extremely well with resizing
-- Understanding the process of hiding elements and having other elements reappear with one click
-- Understand and implement code to complete an iteration in a short amount of time
+- Developing a desktop layout identical to the comp layout
+- Creating a mobile layout that responds extremely well to resizing
+- Understanding the process of toggling element visibility with one click
+- Understanding and implementing code to complete a project iteration in a short amount of time
 
 #### Challenges:
 
-- Removing and adding items as the window decreases and increases to the users liking
-- Using proper syntax to accomplish our goals
+- Removing and adding items using media queries that respond to window width
+- Using proper, DRY code to accomplish our goals
 - Asking help more effectively by being specific when asking questions
 
 
@@ -54,6 +47,7 @@ In this project, the user will be able to record and archive their ideas. The id
 - HTML
 - CSS
 - JavaScript
+- Git/GitHub
 
 ## In Action:
 
@@ -63,39 +57,42 @@ In this project, the user will be able to record and archive their ideas. The id
 
 ### Desktop Layout Comp:
 
-![Desktop Layout Comp](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
+<img src="https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg" alt="Desktop layout comp" height=75% width=auto/>
 
 ### Our Desktop Layout:
 
-![Our Desktop Layout](/images/Desktop-layout.png)
+<img src="/images/Desktop-layout.png" alt="Our desktop layout" height=75% width=auto/>
 
 
 ### Iteration 1 - Mobile Layout
 
-- Giphy of full mobile layout with and without navigation bar:
+Our mobile layout (left) vs. the comp (right):
 
-![Mobile Layout with Dropdown](http://g.recordit.co/3OmCWqEGD7.gif)
+<img src="/images/Our-Mobile-Layout.png" alt="Our mobile layout" height=75% width=auto/>
+<img src="https://user-images.githubusercontent.com/53405028/67904505-2d655e80-fb34-11e9-930b-a920fb2b325e.jpg" alt="Comp mobile layout" height=75% width=auto/>
 
+
+Gif of application collapsing to mobile layout with and without navigation bar:
+
+<img src="http://g.recordit.co/3OmCWqEGD7.gif" alt="Mobile layout with dropdown" height=75% width=auto/>
 
 ### Iteration 2 - Adding Ideas
 
-Giphy will show:
+- When either input field is empty, the "Save" button is disabled
+- New idea cards are added to the idea list once both input fields are filled out and the "Save" button is clicked.  
+- Once an idea card is created, the input fields clear out.
 
-- When either input field is empty, the "Save" button will be a lighter color
-- New idea cards will be added to idea list once both input fields are filled out and the "Save" button is clicked.  
-- Once an idea card is created, the input fields should clear out.
-
-![New Idea Cards and Inputs Are Cleared out](http://g.recordit.co/9ievjfU2h2.gif)
+<img src="http://g.recordit.co/9ievjfU2h2.gif" alt="adding new ideas and clearing out inputs" height=75% width=auto/>
 
 ### Iteration 3 - Favoriting & Deleting ideas
 
-Giphy will show:
+Gif will show:
 
 - When the delete button on an idea card is clicked, the card will be permanently removed from the user's view
 - The "Star" button on an idea card will be an outline of a star until the user clicks on the "Star" button causing that button to now be an "Active Star" (a favorite idea). The user will also be able to click on the "Active Star" button to cause that button to go back to the "Star" button (not a favorite idea).
 - All of this is completed without reloading the page
 
-![Delete, Star, and Active Star Button Functionality](http://g.recordit.co/lKJIm2RusO.gif)
+<img src="http://g.recordit.co/lKJIm2RusO.gif" alt="delete, star, and active star button functionality" height=75% width=auto/>
 
 ## Rubric
 
