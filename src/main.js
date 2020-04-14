@@ -34,18 +34,14 @@ function showFilterStarred() {
 }
 
 function addNewIdea() {
-  var titleInputValue = titleInput.value;
-  var bodyInputValue = bodyInput.value;
-  var newIdea = new Idea(titleInputValue, bodyInputValue);
+  var newIdea = new Idea(titleInput.value, bodyInput.value);
   ideaArray.push(newIdea);
   clearInput();
   showNewIdea();
 }
 
 function enableSaveButton() {
-  var titleInputValue = titleInput.value;
-  var bodyInputValue = bodyInput.value;
-  if (titleInputValue !== "" && bodyInputValue !== "") {
+  if (titleInput.value !== "" && bodyInput.value !== "") {
     saveButton.disabled = false;
   }
 }
@@ -80,8 +76,8 @@ function clearInput() {
 function deleteIdeaDOM(event) {
   if (event.target.className === ('x-button')) {
     event.target.closest('.idea-cards-article').remove();
-    deleteIdea(event);
-    }
+      deleteIdea(event);
+  }
 }
 
 function deleteIdea(event) {
@@ -94,10 +90,10 @@ function deleteIdea(event) {
 }
 
 function showActiveStar(event) {
-  var imgSrc = (event.target);
+  var imgTarget = (event.target);
   if (event.target.className == ('star-button')) {
-    imgSrc.src = imgSrc.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
-      updateDataModel(event);
+    imgTarget.src = imgTarget.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
+    updateDataModel(event);
   }
 }
 
