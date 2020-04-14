@@ -26,9 +26,8 @@ In this project, the user will be able to record and archive their ideas. The id
 - Use a separate data model, such as a class, and a DOM model
 - Create arrays to filter what is displayed
 - Refactor code to show only DRY and SRP code
+- Implement `localStorage` for the user
 
-
-* Implement client-side data persistence using `localStorage`
 * Utilize `data-*` attributes
 
 
@@ -43,7 +42,8 @@ In this project, the user will be able to record and archive their ideas. The id
 
 - Removing and adding items as the window decreases and increases to the users liking
 - Using proper syntax to accomplish our goals
-- Writing dryer code
+- Asking help more effectively by being specific when asking questions
+
 
 #### Reflections:
 
@@ -86,6 +86,16 @@ Giphy will show:
 - Once an idea card is created, the input fields should clear out.
 
 ![New Idea Cards and Inputs Are Cleared out](http://g.recordit.co/9ievjfU2h2.gif)
+
+### Iteration 3 - Favoriting & Deleting ideas
+
+Giphy will show:
+
+- When the delete button on an idea card is clicked, the card will be permanently removed from the user's view
+- The "Star" button on an idea card will be an outline of a star until the user clicks on the "Star" button causing that button to now be an "Active Star" (a favorite idea). The user will also be able to click on the "Active Star" button to cause that button to go back to the "Star" button (not a favorite idea).
+- All of this is completed without reloading the page
+
+![Delete, Star, and Active Star Button Functionality](http://g.recordit.co/lKJIm2RusO.gif)
 
 ## Rubric
 
