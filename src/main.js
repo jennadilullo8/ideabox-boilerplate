@@ -10,8 +10,8 @@ var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 var ideaCardsSection = document.querySelector('.idea-cards-section');
 var ideaCardsArticle = document.getElementsByClassName('idea-cards-article');
-var starButton = document.querySelector('.star-button');
-var deleteButton = document.querySelector('.x-button');
+// var starButton = document.querySelector('.star-button');
+// var deleteButton = document.querySelector('.x-button');
 
 //array
 var ideaArray = [];
@@ -22,7 +22,8 @@ saveButton.addEventListener('click', addNewIdea);
 titleInput.addEventListener('keyup', enableSaveButton);
 bodyInput.addEventListener('keyup', enableSaveButton);
 ideaCardsSection.addEventListener('click', function() {
-  deleteIdea(event);
+  deleteIdeaDOM(event);
+  showActiveStar(event);
 });
 
 //event handlers
@@ -50,26 +51,25 @@ function enableSaveButton() {
 }
 
 function showNewIdea() {
-    ideaCardsSection.innerText = "";
-      for (var i = 0; i < ideaArray.length; i++) {
-        var newIdeaHTML = `
-          <article class="idea-cards-article" data-id=${ideaArray[i].id}>
-            <article class="star-button">
-              <button class="star-button"><img src="images/star-active.svg" alt="star-active" width="25px" height="25px"> </button>
-              <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}> </button>
-            </article>
-            <article class="idea-cards-text">
-              <h3>${ideaArray[i].title}</h3>
-              <p>${ideaArray[i].body}</p>
-            </article>
-            <article class="comment-button">
-              <button class="comment-color"><img src="images/comment.svg" alt="comment" width="25px" height="25px"></button>
-              <p id="comment-text">Comment</p>
-            </article>
-          </article>`
-
-          ideaCardsSection.insertAdjacentHTML('afterbegin', newIdeaHTML);
-      }
+  ideaCardsSection.innerText = "";
+  for (var i = 0; i < ideaArray.length; i++) {
+    var newIdeaHTML = `
+      <article class="idea-cards-article" data-id=${ideaArray[i].id}>
+        <article class="star-x-button">
+          <button class="star-button"><img src="images/star.svg" class="star-button" alt="star-empty" width="25px" height="25px"> </button>
+          <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}></button>
+        </article>
+        <article class="idea-cards-text">
+          <h3>${ideaArray[i].title}</h3>
+          <p>${ideaArray[i].body}</p>
+        </article>
+        <article class="comment-button">
+          <button class="comment-color"><img src="images/comment.svg" alt="comment" width="25px" height="25px"></button>
+          <p id="comment-text">Comment</p>
+        </article>
+      </article>`
+  ideaCardsSection.insertAdjacentHTML('beforeend', newIdeaHTML);
+  }
 }
 
 function clearInput() {
@@ -77,15 +77,25 @@ function clearInput() {
   bodyInput.value = "";
 }
 
-function deleteIdea(event) {
-  var uniqueID = event.target.dataset.id;
-  console.log(event.target);
-  if (event.target.classList.contains('x-button')) {
-    var deletedIdea = document.querySelector(`.idea-cards-article[data-id="${uniqueID}"]`);
-    for (var i = 0; i < ideaArray.length; i++) {
-      if (ideaArray[i].id == deletedIdea.dataset.id) {
-        ideaArray.splice(ideaArray[i], 1);
-      }
+function deleteIdeaDOM(event) {
+  if (event.target.className === ('x-button')) {
+    event.target.closest('.idea-cards-article').remove();
+    deleteIdea(event);
     }
+}
+
+function deleteIdea(event) {
+  var uniqueID = event.target.closest('.x-button').dataset.id;
+  for (var i = 0; i < ideaArray.length; i++) {
+    if (uniqueID == ideaArray[i].id) {
+      ideaArray.splice(ideaArray.indexOf(ideaArray[i]), 1);
+    }
+  }
+}
+
+function showActiveStar(event) {
+  var imgSrc = (event.target);
+  if (event.target.className == ('star-button')) {
+  imgSrc.src = imgSrc.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
   }
 }
