@@ -10,7 +10,8 @@ var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 var ideaCardsSection = document.querySelector('.idea-cards-section');
 var ideaCardsArticle = document.getElementsByClassName('idea-cards-article');
-
+// var starButton = document.querySelector('.star-button');
+// var deleteButton = document.querySelector('.x-button');
 
 //array
 var ideaArray = [];
@@ -22,7 +23,7 @@ titleInput.addEventListener('keyup', enableSaveButton);
 bodyInput.addEventListener('keyup', enableSaveButton);
 ideaCardsSection.addEventListener('click', function() {
   deleteIdeaDOM(event);
-  //deleteIdea(event);
+  showActiveStar(event);
 });
 
 //event handlers
@@ -54,9 +55,9 @@ function showNewIdea() {
       for (var i = 0; i < ideaArray.length; i++) {
         var newIdeaHTML = `
           <article class="idea-cards-article" data-id=${ideaArray[i].id}>
-            <article class="star-button">
-              <button class="star-button"><img src="images/star-active.svg" alt="star-active" width="25px" height="25px"> </button>
-              <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}> </button>
+            <article class="star-x-button">
+              <button class="star-button"><img src="images/star.svg" class="star-button" alt="star-empty" width="25px" height="25px"> </button>
+              <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}></button>
             </article>
             <article class="idea-cards-text">
               <h3>${ideaArray[i].title}</h3>
@@ -79,17 +80,25 @@ function clearInput() {
 
 function deleteIdeaDOM(event) {
   if (event.target.className === ('x-button')) {
-  event.target.closest('.idea-cards-article').remove();
-  }
-  deleteIdea(event);
+    event.target.closest('.idea-cards-article').remove();
+    deleteIdea(event);
+    }
 }
 
 function deleteIdea(event) {
   var uniqueID = event.target.closest('.x-button').dataset.id;
-
   for (var i = 0; i < ideaArray.length; i++) {
     if (uniqueID == ideaArray[i].id) {
       ideaArray.splice(ideaArray.indexOf(ideaArray[i]), 1);
     }
+  }
+}
+
+function showActiveStar(event) {
+  var starButton = document.querySelector('.star-button');
+  var starImg = starButton.querySelector('img');
+  console.log(starImg);
+  if (event.target.className == ('star-button')) {
+    starImg.src = starImg.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
   }
 }
