@@ -21,7 +21,7 @@ ideaCardsSection.addEventListener('click', function() {
 });
 
 //event handlers
-function showFilterStarred() {
+function showFilterStarred(event) {
   var hamburgerMenuClose = document.querySelector(".hamburger-menu-close");
   var filterStarred = document.querySelector(".filter-starred");
   var mobileDropDown = document.querySelector(".mobile-drop-down");
@@ -87,7 +87,7 @@ function deleteIdeaDOM(event) {
 function deleteIdea(event) {
   var uniqueID = event.target.closest('.x-button').dataset.id;
   for (var i = 0; i < ideaArray.length; i++) {
-    if (uniqueID == ideaArray[i].id) {
+    if (uniqueID === ideaArray[i].id) {
       ideaArray.splice(ideaArray.indexOf(ideaArray[i]), 1);
     }
   }
@@ -95,7 +95,7 @@ function deleteIdea(event) {
 
 function showActiveStar(event) {
   var imgTarget = (event.target);
-  if (event.target.className == ('star-button')) {
+  if (event.target.className === ('star-button')) {
     imgTarget.src = imgTarget.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
     updateDataModel(event);
   }
