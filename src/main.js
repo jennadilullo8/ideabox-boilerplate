@@ -51,26 +51,25 @@ function enableSaveButton() {
 }
 
 function showNewIdea() {
-    ideaCardsSection.innerText = "";
-      for (var i = 0; i < ideaArray.length; i++) {
-        var newIdeaHTML = `
-          <article class="idea-cards-article" data-id=${ideaArray[i].id}>
-            <article class="star-x-button">
-              <button class="star-button"><img src="images/star.svg" class="star-button" alt="star-empty" width="25px" height="25px"> </button>
-              <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}></button>
-            </article>
-            <article class="idea-cards-text">
-              <h3>${ideaArray[i].title}</h3>
-              <p>${ideaArray[i].body}</p>
-            </article>
-            <article class="comment-button">
-              <button class="comment-color"><img src="images/comment.svg" alt="comment" width="25px" height="25px"></button>
-              <p id="comment-text">Comment</p>
-            </article>
-          </article>`
-
-          ideaCardsSection.insertAdjacentHTML('beforeend', newIdeaHTML);
-      }
+  ideaCardsSection.innerText = "";
+  for (var i = 0; i < ideaArray.length; i++) {
+    var newIdeaHTML = `
+      <article class="idea-cards-article" data-id=${ideaArray[i].id}>
+        <article class="star-x-button">
+          <button class="star-button"><img src="images/star.svg" class="star-button" alt="star-empty" width="25px" height="25px"> </button>
+          <button class="x-button" data-id=${ideaArray[i].id}><img src="images/delete.svg" class="x-button" alt="image-deleted" width="25px" height="25px" data-id=${ideaArray[i].id}></button>
+        </article>
+        <article class="idea-cards-text">
+          <h3>${ideaArray[i].title}</h3>
+          <p>${ideaArray[i].body}</p>
+        </article>
+        <article class="comment-button">
+          <button class="comment-color"><img src="images/comment.svg" alt="comment" width="25px" height="25px"></button>
+          <p id="comment-text">Comment</p>
+        </article>
+      </article>`
+  ideaCardsSection.insertAdjacentHTML('beforeend', newIdeaHTML);
+  }
 }
 
 function clearInput() {
@@ -95,10 +94,8 @@ function deleteIdea(event) {
 }
 
 function showActiveStar(event) {
-  var starButton = document.querySelector('.star-button');
-  var starImg = starButton.querySelector('img');
-  console.log(starImg);
+  var imgSrc = (event.target);
   if (event.target.className == ('star-button')) {
-    starImg.src = starImg.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
+  imgSrc.src = imgSrc.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
   }
 }
