@@ -8,19 +8,18 @@
 - Jenna DiLullo: https://github.com/jennadilullo8
 
 ## About project:
-In this project, we created an application with which a user will be able to record and archive their ideas. The user will write their ideas in the provided Title and Idea inputs, and save them for later reference. They can also "star" an idea, and use the Filter Starred Ideas button to filter their starred ideas. This application is also mobile-friendly to satisfy the user on the go.
+In this project, we created an application with which a user will be able to record and archive their ideas. The user will write their ideas in the provided Title and Idea inputs, and save them for later reference. They can also "star" an idea, and use the Filter Starred Ideas button to only display starred ideas. This application is also mobile-friendly to satisfy the user on the go.
 
 ## Project Goals:
 
 - Build an application from scratch using HTML, CSS, and JavaScript
 - Properly communicate GitFlow with collaborators
-- Use Media Queries to respond to mobile layout
-- Build responsive client-side applications with good user feedback
-- Use a separate data model, such as a class, and a DOM model
+- Use media queries to respond to mobile layout
+- Build a responsive client-side application with good user feedback
+- Use a separate data model and a DOM model
 - Create arrays to filter what is displayed
 - Refactor code to show only DRY and SRP code
 - Implement `localStorage` for the user
-
 * Utilize `data-*` attributes
 
 
@@ -53,13 +52,11 @@ In this project, we created an application with which a user will be able to rec
 
 ### Desktop Layout:
 
-- Comparison between the comp desktop layout and ours:
-
-### Desktop Layout Comp:
+#### Desktop Layout Comp:
 
 <img src="https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg" alt="Desktop layout comp" height=75% width=auto/>
 
-### Our Desktop Layout:
+#### Our Desktop Layout:
 
 <img src="/images/Desktop-layout.png" alt="Our desktop layout" height=75% width=auto/>
 
@@ -72,24 +69,23 @@ Our mobile layout (left) vs. the comp (right):
 <img src="https://user-images.githubusercontent.com/53405028/67904505-2d655e80-fb34-11e9-930b-a920fb2b325e.jpg" alt="Comp mobile layout" height=75% width=auto/>
 
 
-Gif of application collapsing to mobile layout with and without navigation bar:
+Gif of application collapsing to mobile layout with and without menu bar:
 
 <img src="http://g.recordit.co/3OmCWqEGD7.gif" alt="Mobile layout with dropdown" height=75% width=auto/>
 
 ### Iteration 2 - Adding Ideas
 
 - When either input field is empty, the "Save" button is disabled
-- New idea cards are added to the idea list once both input fields are filled out and the "Save" button is clicked.  
-- Once an idea card is created, the input fields clear out.
+- New idea cards are added to the idea list once both input fields are filled out and the "Save" button is clicked
+- Once an idea card is created, the input fields clear out
 
 <img src="http://g.recordit.co/9ievjfU2h2.gif" alt="adding new ideas and clearing out inputs" height=75% width=auto/>
 
 ### Iteration 3 - Favoriting & Deleting ideas
 
-Gif will show:
-
 - When the delete button on an idea card is clicked, the card will be permanently removed from the user's view
-- The "Star" button on an idea card will be an outline of a star until the user clicks on the "Star" button causing that button to now be an "Active Star" (a favorite idea). The user will also be able to click on the "Active Star" button to cause that button to go back to the "Star" button (not a favorite idea).
+- When the user clicks on the "star" button, the star changes to indicate the idea is now starred
+- The starred idea can be "un-starred"
 - All of this is completed without reloading the page
 
 <img src="http://g.recordit.co/lKJIm2RusO.gif" alt="delete, star, and active star button functionality" height=75% width=auto/>
