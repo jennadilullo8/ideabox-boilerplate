@@ -96,6 +96,16 @@ function deleteIdea(event) {
 function showActiveStar(event) {
   var imgSrc = (event.target);
   if (event.target.className == ('star-button')) {
-  imgSrc.src = imgSrc.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
+    imgSrc.src = imgSrc.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
+      updateDataModel(event);
+  }
+}
+
+function updateDataModel(event) {
+  var ideaModel = (event.target.parentNode.parentNode.parentNode).dataset.id;
+  for (var i = 0; i < ideaArray.length; i++) {
+    if (ideaModel.match(ideaArray[i].id)) {
+      ideaArray[i].star = (ideaArray[i].star === false) ? true : false;
+    }
   }
 }
