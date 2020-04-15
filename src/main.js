@@ -11,6 +11,7 @@ var ideaCardsArticle = document.getElementsByClassName('idea-cards-article');
 var ideaArray = [];
 
 //event listeners
+window.onload = getLocalStorage();
 hamburgerMenu.addEventListener('click', showFilterStarred);
 saveButton.addEventListener('click', addNewIdea);
 titleInput.addEventListener('keyup', enableSaveButton);
@@ -36,6 +37,19 @@ function addNewIdea() {
   ideaArray.push(newIdea);
   clearInput();
   showNewIdea();
+  newIdea.saveToStorage();
+}
+
+function getLocalStorage() {
+  if (localStorage) {
+      for (var i = 0; i < localStorage.length; i++ ) {
+        var uniqueID = localStorage.key(i);
+        var ideaObject = JSON.parse(localStorage.getItem(uniqueID));
+        ideaObject = new Idea(ideaObject.title, ideaObject.body);
+        ideaArray.push(ideaObject);
+        showNewIdea();
+      }
+  }
 }
 
 function enableSaveButton() {
