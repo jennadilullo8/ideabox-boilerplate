@@ -14,14 +14,13 @@ In this project, we created an application with which a user will be able to rec
 
 - Build an application from scratch using HTML, CSS, and JavaScript
 - Properly communicate GitFlow with collaborators
-- Use media queries to respond to mobile layout
-- Build a responsive client-side application with good user feedback
-- Use a separate data model and a DOM model
+- Use Media Queries to respond to mobile layout
+- Build responsive client-side applications with good user feedback
+- Use a separate data model, such as a class, and a DOM model
+- Accessing elements from the DOM, by using `data-*` attributes
 - Create arrays to filter what is displayed
 - Refactor code to show only DRY and SRP code
-- Implement `localStorage` for the user
-* Utilize `data-*` attributes
-
+- Implement `localStorage` by using the proper method
 
 #### Wins:
 
@@ -35,11 +34,7 @@ In this project, we created an application with which a user will be able to rec
 - Removing and adding items using media queries that respond to window width
 - Using proper, DRY code to accomplish our goals
 - Asking help more effectively by being specific when asking questions
-
-
-#### Reflections:
-
--
+- Being able to toggle back and forth between elements
 
 #### Technologies Used:
 
@@ -59,7 +54,6 @@ In this project, we created an application with which a user will be able to rec
 #### Our Desktop Layout:
 
 <img src="/images/Desktop-layout.png" alt="Our desktop layout" height=auto width=75%/>
-
 
 ### Iteration 1 - Mobile Layout
 
@@ -88,3 +82,12 @@ Gif of application collapsing to mobile layout with and without menu bar:
 - All of this is completed without reloading the page
 
 <img src="http://g.recordit.co/lKJIm2RusO.gif" alt="delete, star, and active star button functionality" height=auto width=75%/>
+
+### Iteration 4 - Local Storage & Filtering
+
+- When the user refreshes the page, the idea cards will be displayed.
+- When one of those idea cards are deleted and the page is then refreshed, that idea card will no longer show.
+- When the user clicks on the "star" button on an idea card, and then refresh the page, the idea card will still have the "star" button highlighted
+- The user can click on the "Show Starred Ideas" button and only see their favorite ideas as well as see the inner text of the button change to say "Show All Ideas"
+
+<img src="http://g.recordit.co/kT2YV2CpAq.gif" alt="delete, star, and active star button functionality" height=auto width=75%/>
