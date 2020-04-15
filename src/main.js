@@ -45,7 +45,7 @@ function getLocalStorage() {
     for (var i = 0; i < localStorage.length; i++ ) {
       var uniqueID = localStorage.key(i);
       var ideaObject = JSON.parse(localStorage.getItem(uniqueID));
-      ideaObject = new Idea(ideaObject.title, ideaObject.body, ideaObject.id);
+      ideaObject = new Idea(ideaObject.title, ideaObject.body, ideaObject.id, ideaObject.star);
       ideaArray.push(ideaObject);
       showNewIdea();
     }
@@ -118,6 +118,7 @@ function updateStarInstance(event) {
   for (var i = 0; i < ideaArray.length; i++) {
     if (ideaModel.match(ideaArray[i].id)) {
       ideaArray[i].star = (ideaArray[i].star === false) ? true : false;
+      ideaArray[i].saveToStorage();
     }
   }
 }
