@@ -8,10 +8,10 @@ class Idea {
   saveToStorage() {
     localStorage.setItem(JSON.stringify(this.id), JSON.stringify(this));
   }
-  //
-  // deleteFromStorage() {
-  //
-  // }
+
+  deleteFromStorage() {
+    localStorage.removeItem(this.id);
+  }
   //
   // updateIdea() {
   //
