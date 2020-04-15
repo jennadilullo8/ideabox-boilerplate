@@ -1,9 +1,9 @@
 class Idea {
-  constructor(title, body, id) {
+  constructor(title, body, id, star) {
     this.id = id || Date.now();
     this.title = title;
     this.body = body;
-    this.star = false;
+    this.star = star || false;
   }
 
   saveToStorage() {
