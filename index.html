@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta name=“viewport” content=“width=device-width, initial-scale=1”>
-      <title>Idea Box</title>
-      <link href=“https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap” rel=“stylesheet”>
-      <link rel="stylesheet" type="text/css" href="./styles.css">
+    <meta name=“viewport” content=“width=device-width, initial-scale=1”>
+    <title>Idea Box</title>
+    <link href=“https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap” rel=“stylesheet”>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-      <section class="idea-box">
-          <button class="hamburger-menu"><img src="images/menu.svg" alt="hamburger-menu" width="35px" height="35px"> </button>
-          <h2>IdeaBox</h2>
+    <section class="idea-box">
+      <button class="hamburger-menu"><img src="images/menu.svg" alt="hamburger-menu" width="35px" height="35px"></button>
+        <h2>IdeaBox</h2>
           <article class="filter-starred">
-              <p>Filter Starred Ideas</p>
-              <button class="show-starred">Show Starred Ideas</button>
+            <p>Filter Starred Ideas</p>
+            <button class="show-starred">Show Starred Ideas</button>
           </article>
+    </section>
+    <div class="mobile-drop-down" hidden></div>
+    <section class="idea-form">
+      <label for="title-input">Title</label>
+      <input type="text" name="title-input" id="title-input">
+      <label for="body-input">Body</label>
+      <textarea name="body-input" cols="40" rows="5" id="body-input"></textarea>
+      <button class="save" disabled=true>Save</button>
+        <section class="search-bar">
+          <img class="search-image" src="images/search.svg" alt="search-bar" width="20px" height="30px">
+          <input type="text" name="search-input" id="search-input" placeholder="Search ideas">
+        </section>
       </section>
-      <div class="mobile-drop-down" hidden></div>
-      <section class="idea-form">
-          <label for="title-input">Title</label>
-          <input type="text" name="title-input" id="title-input">
-          <label for="body-input">Body</label>
-          <textarea name="body-input" cols="40" rows="5" id="body-input"></textarea>
-          <button class="save" disabled=true>Save</button>
-          <section class="search-bar">
-              <img class="search-image" src="images/search.svg" alt="search-bar" width="20px" height="30px">
-              <input type="text" name="search-input" id="search-input" placeholder="Search ideas">
-          </section>
-      </section>
-      <section class="idea-cards-section">
-      </section>
+      <section class="idea-cards-section"></section>
       <script src="./src/idea.js"></script>
       <script src="./src/main.js"></script>
   </body>
