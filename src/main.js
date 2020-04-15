@@ -131,5 +131,5 @@ function showStarredIdeas(event) {
   });
   ideaArray = starredIdeas;
   showNewIdea();
-  event.target.innerText = 'Show all ideas'
+  event.target.innerText = event.target.innerText.match('Show Starred Ideas') ? 'Show All Ideas' : 'Show Starred Ideas';
 }
