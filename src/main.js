@@ -131,4 +131,5 @@ function showStarredIdeas(event) {
   });
   ideaArray = starredIdeas;
   showNewIdea();
+  event.target.innerText = 'Show all ideas'
 }
