@@ -42,13 +42,13 @@ function addNewIdea() {
 
 function getLocalStorage() {
   if (localStorage) {
-      for (var i = 0; i < localStorage.length; i++ ) {
-        var uniqueID = localStorage.key(i);
-        var ideaObject = JSON.parse(localStorage.getItem(uniqueID));
-        ideaObject = new Idea(ideaObject.title, ideaObject.body);
-        ideaArray.push(ideaObject);
-        showNewIdea();
-      }
+    for (var i = 0; i < localStorage.length; i++ ) {
+      var uniqueID = localStorage.key(i);
+      var ideaObject = JSON.parse(localStorage.getItem(uniqueID));
+      ideaObject = new Idea(ideaObject.title, ideaObject.body, ideaObject.id);
+      ideaArray.push(ideaObject);
+      showNewIdea();
+    }
   }
 }
 
@@ -89,7 +89,7 @@ function clearInput() {
 function deleteIdeaDOM(event) {
   if (event.target.className === ('x-button')) {
     event.target.closest('.idea-cards-article').remove();
-      deleteIdea(event);
+    deleteIdea(event);
   }
 }
 
@@ -98,6 +98,9 @@ function deleteIdea(event) {
   for (var i = 0; i < ideaArray.length; i++) {
     if (uniqueID === ideaArray[i].id) {
       ideaArray.splice(ideaArray.indexOf(ideaArray[i]), 1);
+    }
+    if (parseInt(uniqueID) === ideaArray[i].id) {
+      ideaArray[i].deleteFromStorage();
     }
   }
 }
