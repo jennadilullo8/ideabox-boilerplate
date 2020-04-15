@@ -5,9 +5,9 @@ class Idea {
     this.body = body;
     this.star = false;
   }
-  // saveToStorage() {
-  //
-  // }
+  saveToStorage() {
+    localStorage.setItem(JSON.stringify(this.id), JSON.stringify(this));
+  }
   //
   // deleteFromStorage() {
   //
