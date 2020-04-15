@@ -65,8 +65,7 @@ In this project, we created an application with which a user will be able to rec
 
 Our mobile layout (left) vs. the comp (right):
 
-<img src="/images/Our-Mobile-Layout.png" alt="Our mobile layout" height=500px width=auto/>
-<img src="https://user-images.githubusercontent.com/53405028/67904505-2d655e80-fb34-11e9-930b-a920fb2b325e.jpg" alt="Comp mobile layout" height=500px width=auto/>
+<img src="/images/Our-Mobile-Layout.png" alt="Our mobile layout" height=500px width=auto/><img src="https://user-images.githubusercontent.com/53405028/67904505-2d655e80-fb34-11e9-930b-a920fb2b325e.jpg" alt="Comp mobile layout" height=500px width=auto/>
 
 
 Gif of application collapsing to mobile layout with and without menu bar:
