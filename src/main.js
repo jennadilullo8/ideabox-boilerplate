@@ -17,7 +17,7 @@ titleInput.addEventListener('keyup', enableSaveButton);
 bodyInput.addEventListener('keyup', enableSaveButton);
 ideaCardsSection.addEventListener('click', function() {
   deleteIdeaDOM(event);
-  showActiveStar(event);
+  toggleActiveStar(event);
 });
 
 //event handlers
@@ -46,13 +46,8 @@ function enableSaveButton() {
 
 function showNewIdea() {
   ideaCardsSection.innerText = "";
-  var starStyle;
   for (var i = 0; i < ideaArray.length; i++) {
-     if (ideaArray[i].star === true) {
-       starStyle = "images/star-active.svg"
-    } else {
-      starStyle = "images/star.svg"
-    }
+    var starStyle = (ideaArray[i].star === true) ? "images/star-active.svg" : "images/star.svg";
     var newIdeaHTML = `
       <article class="idea-cards-article" data-id=${ideaArray[i].id}>
         <article class="star-x-button">
@@ -93,15 +88,15 @@ function deleteIdea(event) {
   }
 }
 
-function showActiveStar(event) {
+function toggleActiveStar(event) {
   var imgTarget = (event.target);
   if (event.target.className === ('star-button')) {
     imgTarget.src = imgTarget.src.match("images/star.svg") ? "images/star-active.svg" : "images/star.svg";
-    updateDataModel(event);
+    updateStarInstance(event);
   }
 }
 
-function updateDataModel(event) {
+function updateStarInstance(event) {
   var ideaModel = (event.target.parentNode.parentNode.parentNode).dataset.id;
   for (var i = 0; i < ideaArray.length; i++) {
     if (ideaModel.match(ideaArray[i].id)) {
