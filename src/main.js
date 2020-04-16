@@ -1,21 +1,15 @@
-
-//querySelector
 var hamburgerMenu = document.querySelector(".hamburger-menu");
 var saveButton = document.querySelector('.save');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 var ideaCardsSection = document.querySelector('.idea-cards-section');
-var ideaCardsArticle = document.getElementsByClassName('idea-cards-article');
 var showStarredIdeasButton = document.querySelector('.show-starred');
-
-//array
 var ideaArray = [];
 
-//event listeners
 window.onload = getLocalStorage();
 hamburgerMenu.addEventListener('click', showFilterStarred);
-saveButton.addEventListener('click', addNewIdea);
 showStarredIdeasButton.addEventListener('click', showStarredIdeas);
+saveButton.addEventListener('click', addNewIdea);
 titleInput.addEventListener('keyup', enableSaveButton);
 bodyInput.addEventListener('keyup', enableSaveButton);
 ideaCardsSection.addEventListener('click', function() {
@@ -23,7 +17,6 @@ ideaCardsSection.addEventListener('click', function() {
   toggleActiveStar(event);
 });
 
-//event handlers
 function showFilterStarred(event) {
   var hamburgerMenuClose = document.querySelector(".hamburger-menu-close");
   var filterStarred = document.querySelector(".filter-starred");
@@ -44,7 +37,7 @@ function addNewIdea() {
 
 function getLocalStorage() {
   if (localStorage) {
-    for (var i = 0; i < localStorage.length; i++ ) {
+    for (var i = 0; i < localStorage.length; i++) {
       var uniqueID = localStorage.key(i);
       var ideaObject = JSON.parse(localStorage.getItem(uniqueID));
       ideaObject = new Idea(ideaObject.title, ideaObject.body, ideaObject.id, ideaObject.star);
@@ -126,8 +119,8 @@ function updateStarInstance(event) {
 }
 
 function showStarredIdeas(event) {
-  var starredIdeas = ideaArray.filter(function(star) {
-    return star.star;
+  var starredIdeas = ideaArray.filter(function(object) {
+    return object.star;
   });
   ideaArray = starredIdeas;
   showNewIdea();

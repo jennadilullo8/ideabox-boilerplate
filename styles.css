@@ -189,7 +189,7 @@ button.comment-color{
   padding: 0px;
 }
 
-/* media Queries */
+/* MEDIA QUERIES */
 @media screen and (max-width: 45em) {
   .idea-cards-section {
    grid-template-columns: repeat(2, 1fr);
