@@ -86,8 +86,8 @@ Gif of application collapsing to mobile layout with and without menu bar:
 ### Iteration 4 - Local Storage & Filtering
 
 - When the user refreshes the page, the idea cards will be displayed.
-- When one of those idea cards are deleted and the page is then refreshed, that idea card will no longer show.
-- When the user clicks on the "star" button on an idea card, and then refresh the page, the idea card will still have the "star" button highlighted
+- When one of those idea cards is deleted and the page is then refreshed, that idea card will no longer show.
+- When the user clicks on the "star" button on an idea card, and then refreshes the page, the idea card will still have the "star" button highlighted
 - The user can click on the "Show Starred Ideas" button and only see their favorite ideas as well as see the inner text of the button change to say "Show All Ideas"
 
 <img src="http://g.recordit.co/kT2YV2CpAq.gif" alt="delete, star, and active star button functionality" height=auto width=75%/>
